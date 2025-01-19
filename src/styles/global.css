@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Iosevka';
     src: url('/fonts/Iosevka-Regular.woff2') format('woff2');
@@ -32,4 +36,12 @@
     src: url('/fonts/Iosevka-Black.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
+}
+
+@layer components {
+    .bg-stripes {
+        background-color: #1a1a1a;
+        background-image: linear-gradient(to bottom right, #FFB70030 10%, #0000, #0000 50%, #FFB70030, #FFB70030 60%, #0000, #0000);
+        background-size: 7.07px 7.07px;
+    }
 }

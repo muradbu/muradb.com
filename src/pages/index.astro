@@ -7,12 +7,6 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
     <main class="flex flex-col pt-8 h-screen text-white">
         <WelcomeHeader />
-        <div class="mt-8">
-            <p>
-                🏗️ I'm currently completely redoing my site. Check back later
-                maybe :)
-            </p>
-        </div>
         <section class="pt-8">
             <h2 class="uppercase font-bold text-lg">About Me</h2>
             <p>
@@ -38,6 +32,12 @@ import Layout from "../layouts/Layout.astro";
             </p>
         </section>
         <footer>
+            <div class="mt-8 bg-stripes p-2">
+                <p class="font-bold">
+                    🏗️ I'm currently completely redoing my site. Check back
+                    later maybe :)
+                </p>
+            </div>
             <Socials />
         </footer>
     </main>
