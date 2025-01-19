@@ -1,30 +1,44 @@
 ---
+import Socials from "../components/Socials.astro";
 import WelcomeHeader from "../components/WelcomeHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <main class="flex flex-col pt-8 h-screen">
+    <main class="flex flex-col pt-8 h-screen text-white">
         <WelcomeHeader />
-        <div class="text-white mt-8">
+        <div class="mt-8">
             <p>
-                I'm currently completely redoing my site. Check back later maybe
-                :)
+                🏗️ I'm currently completely redoing my site. Check back later
+                maybe :)
             </p>
         </div>
-        <section class="text-white pt-8">
-            <h2 class="uppercase font-bold">About Me</h2>
+        <section class="pt-8">
+            <h2 class="uppercase font-bold text-lg">About Me</h2>
             <p>
                 I'm a tech generalist from the Netherlands with a background in
                 software development.
                 <br /><br />
                 Since 2022 I've got a newfound passion for UNIX based systems, namely
                 Linux. I really enjoy learning about its ins and outs, because it
-                allows me to shape the OS to fit any of my project's needs.
+                allows me to shape the OS to fit any of my project's needs. I enjoy
+                it so much that I decided to pursue an education and career in infrastructure,
+                security, devops and sysadmin.
                 <br /><br />
-                I enjoy it so much that I decided to pursue an education and career
-                in infrastructure, security, devops and sysadmin.
+                Some of my hobbies include enjoying live music and playing electric
+                guitar, hiking and camping, brewing and exploring specialty coffee,
+                watching and reviewing movies on <a
+                    href="https://letterboxd.com/Carthus"
+                    class="underline">Letterboxd</a
+                > and writing.
+                <br /><br />
+                This is my little corner of the internet where I write about my adventures
+                in tech, music, coffee, and whatever else captures my interest. Enjoy
+                your stay!
             </p>
         </section>
+        <footer>
+            <Socials />
+        </footer>
     </main>
 </Layout>
