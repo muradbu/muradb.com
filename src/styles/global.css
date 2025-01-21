@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Iosevka';
-    src: url('/fonts/Iosevka-Regular.woff2') format('woff2');
+    src: url('/fonts/Iosevka-Regular.subset.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
