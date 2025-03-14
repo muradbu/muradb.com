@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+    --font-iosevka: "Iosevka", "sans-serif";
+}
+
 @font-face {
-    font-family: 'Iosevka';
     src: url('/fonts/Iosevka-Regular.subset.woff2') format('woff2');
+    font-family: 'Iosevka';
     font-weight: normal;
     font-style: normal;
     font-display: swap;
