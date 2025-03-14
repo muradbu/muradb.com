@@ -2,13 +2,16 @@
 import Socials from "../components/Socials.astro";
 import WelcomeHeader from "../components/WelcomeHeader.astro";
 import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const allBlogPosts = await getCollection("blog");
 ---
 
 <Layout>
     <main class="flex flex-col pt-8 h-screen text-white">
         <WelcomeHeader />
         <section class="pt-8 [&>p]:mb-6">
-            <h2 class="font-bold text-lg">ABOUT ME</h2>
+            <h2 class="font-bold text-lg uppercase">About me</h2>
             <p>
                 I'm a tech generalist from the Netherlands with a background in
                 software development.
@@ -34,6 +37,20 @@ import Layout from "../layouts/Layout.astro";
                 adventures in tech, music, coffee, and whatever else captures my
                 interest. Enjoy your stay!
             </p>
+        </section>
+        <section>
+            <h2 class="font-bold text-lg uppercase">Blog</h2>
+            <ul class="text-white">
+                {
+                    allBlogPosts.map((post) => (
+                        <li>
+                            <a class="text-white" href={`/blog/${post.id}`}>
+                                {post.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
         </section>
         <footer>
             <div class="mt-8 bg-stripes p-2">
