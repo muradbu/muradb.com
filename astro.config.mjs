@@ -9,6 +9,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   experimental: {
-    svg: true
+    svg: true,
+    contentIntellisense: true,
   }
 });
