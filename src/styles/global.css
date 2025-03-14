@@ -12,11 +12,3 @@
     font-display: swap;
     font-synthesis: weight style small-caps;
 }
-
-@layer components {
-    .bg-stripes {
-        background-color: #1a1a1a;
-        background-image: linear-gradient(to bottom right, #FFB70030 10%, #0000, #0000 50%, #FFB70030, #FFB70030 60%, #0000, #0000);
-        background-size: 7.07px 7.07px;
-    }
-}
