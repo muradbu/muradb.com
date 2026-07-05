@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 
 export type Photo = {
+    id: string;
     src: ImageMetadata;
     alt: string;
 };
@@ -45,6 +46,7 @@ function dateKey(path: string): number {
 export const photos: Photo[] = Object.entries(modules)
     .sort(([a], [b]) => dateKey(b) - dateKey(a) || b.localeCompare(a))
     .map(([path, mod]) => ({
+        id: filenameOf(path),
         src: mod.default,
         alt: altFromPath(path),
     }));

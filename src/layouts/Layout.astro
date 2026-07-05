@@ -1,5 +1,11 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Murad Büyükaşık" } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +18,7 @@ import "../styles/global.css";
 			content="Tech generalist from the Netherlands exploring Linux, infrastructure, and DevOps. Writing about tech adventures, specialty coffee, music, and outdoor experiences. Personal blog and portfolio."
 		/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Murad Büyükaşık</title>
+		<title>{title}</title>
 	</head>
 	<body class="m-auto max-w-3xl px-2 lg:px-0 dark:bg-black font-iosevka">
 		<slot />
