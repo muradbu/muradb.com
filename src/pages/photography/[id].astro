@@ -23,6 +23,19 @@ const candidateWidths = [640, 1024, 1600, 2048, 2560, photo.src.width];
 const widths = [...new Set(candidateWidths.filter((w) => w <= photo.src.width))];
 
 const pageTitle = `${photo.alt || "Photo"} — Murad Büyükaşık`;
+
+// Assemble the EXIF line from whichever fields the photo actually has.
+const exif = photo.exif;
+const exifParts = exif
+    ? [
+          exif.camera,
+          exif.lens,
+          exif.focalLength,
+          exif.aperture,
+          exif.shutter,
+          exif.iso,
+      ].filter(Boolean)
+    : [];
 ---
 
 <Layout title={pageTitle}>
@@ -38,6 +51,14 @@ const pageTitle = `${photo.alt || "Photo"} — Murad Büyükaşık`;
             />
         </div>
         {photo.alt && <p class="mt-4">{photo.alt}</p>}
+        {
+            exifParts.length > 0 && (
+                <p class={`text-sm ${photo.alt ? "mt-1" : "mt-4"}`}>
+                    {exifParts.join(" · ")}
+                </p>
+            )
+        }
+        {exif?.date && <p class="text-sm opacity-70 mt-1">{exif.date}</p>}
         <a href="/photography" class="underline mt-6"
             >&larr; back to photography</a
         >

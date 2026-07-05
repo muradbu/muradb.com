@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^7.0.6
         version: 7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(jiti@2.7.0)(rollup@4.35.0)(yaml@2.7.0)
+      exifr:
+        specifier: ^7.1.3
+        version: 7.1.3
       sharp:
         specifier: ^0.35.3
         version: 0.35.3
@@ -1164,6 +1167,9 @@ packages:
 
   eventemitter3@5.0.4:
     resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
+
+  exifr@7.1.3:
+    resolution: {integrity: sha512-g/aje2noHivrRSLbAUtBPWFbxKdKhgj/xr1vATDdUXPOFYJlQ62Ft0oy+72V6XLIpDJfHs6gXLbBLAolqOXYRw==}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -3086,6 +3092,8 @@ snapshots:
       '@types/estree': 1.0.6
 
   eventemitter3@5.0.4: {}
+
+  exifr@7.1.3: {}
 
   extend@3.0.2: {}
 
