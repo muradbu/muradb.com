@@ -33,7 +33,7 @@
                 {
                   languages.javascript = {
                     enable = true;
-                    package = pkgs.nodejs_23;
+                    package = pkgs.nodejs_22;
                     pnpm.enable = true;
                   };
 
