@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import type { Photo } from "../photos";
+
+interface Props {
+    photos: Photo[];
+    // Optional cap on how many photos to render (used by the homepage preview).
+    limit?: number;
+    // Responsive image settings — the /photography page renders larger images.
+    widths?: number[];
+    sizes?: string;
+}
+
+const {
+    photos,
+    limit,
+    widths = [400, 800, 1200],
+    sizes = "(max-width: 640px) 50vw, 33vw",
+} = Astro.props;
+
+const shown = typeof limit === "number" ? photos.slice(0, limit) : photos;
+---
+
+{
+    shown.length === 0 ? (
+        <p>No photos yet</p>
+    ) : (
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {shown.map((photo) => (
+                <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    widths={widths}
+                    sizes={sizes}
+                    loading="lazy"
+                    class="w-full h-auto object-cover"
+                />
+            ))}
+        </div>
+    )
+}

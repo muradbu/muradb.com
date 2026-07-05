@@ -12,10 +12,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  experimental: {
-    svg: true,
-    contentIntellisense: true,
-  },
-
   integrations: [mdx()]
 });
