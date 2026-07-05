@@ -1,14 +1,16 @@
 ---
 import Socials from "../components/Socials.astro";
 import WelcomeHeader from "../components/WelcomeHeader.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
 import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
+import { photos } from "../photos";
 const allBlogPosts = await getCollection("blog");
 ---
 
 <Layout>
-    <main class="flex flex-col pt-8 h-screen text-white">
+    <main class="flex flex-col pt-8 min-h-screen text-white">
         <WelcomeHeader />
         <section class="pt-8 [&>p]:mb-6">
             <h2 class="font-bold text-lg uppercase">About me</h2>
@@ -52,6 +54,14 @@ const allBlogPosts = await getCollection("blog");
                     ))
                 }
             </ul> -->
+        </section>
+        <section class="pt-8">
+            <h2 class="font-bold text-lg uppercase">Photography</h2>
+            <p class="mb-6">Some pictures I've taken recently.</p>
+            <PhotoGrid photos={photos} limit={6} />
+            <a href="/photography" class="underline inline-block mt-4"
+                >view all &rarr;</a
+            >
         </section>
         <footer>
             <Socials />

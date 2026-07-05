@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
+import Socials from "../components/Socials.astro";
+import { photos } from "../photos";
+---
+
+<Layout>
+    <main class="flex flex-col pt-8 min-h-screen text-white">
+        <section class="[&>p]:mb-6">
+            <h2 class="font-bold text-lg uppercase">Photography</h2>
+            <p>Pictures I took, newest first.</p>
+            <PhotoGrid
+                photos={photos}
+                widths={[800, 1600, 2400]}
+                sizes="(max-width: 640px) 100vw, 66vw"
+            />
+        </section>
+        <a href="/" class="underline mt-6">&larr; back home</a>
+        <footer>
+            <Socials />
+        </footer>
+    </main>
+</Layout>
