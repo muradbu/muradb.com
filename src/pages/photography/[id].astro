@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Socials from "../../components/Socials.astro";
+import { Image } from "astro:assets";
+import { photos, type Photo } from "../../photos";
+
+export function getStaticPaths() {
+    return photos.map((photo) => ({
+        params: { id: photo.id },
+        props: { photo },
+    }));
+}
+
+interface Props {
+    photo: Photo;
+}
+
+const { photo } = Astro.props;
+
+// Offer resolutions up to (but never above) the source width — Astro doesn't
+// upscale, so requesting more than the source just wastes variants.
+const candidateWidths = [640, 1024, 1600, 2048, 2560, photo.src.width];
+const widths = [...new Set(candidateWidths.filter((w) => w <= photo.src.width))];
+
+const pageTitle = `${photo.alt || "Photo"} — Murad Büyükaşık`;
+---
+
+<Layout title={pageTitle}>
+    <main class="flex flex-col pt-8 min-h-screen text-white">
+        <div class="relative left-1/2 right-1/2 -mx-[50vw] w-screen">
+            <Image
+                src={photo.src}
+                alt={photo.alt}
+                widths={widths}
+                sizes="100vw"
+                loading="eager"
+                class="mx-auto max-h-[90vh] w-auto max-w-full object-contain"
+            />
+        </div>
+        {photo.alt && <p class="mt-4">{photo.alt}</p>}
+        <a href="/photography" class="underline mt-6"
+            >&larr; back to photography</a
+        >
+        <footer>
+            <Socials />
+        </footer>
+    </main>
+</Layout>
